@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1>My Photo Gallery</h1>
+    <div class="gallery">
+        <img src="https://th.bing.com/th/id/OIP.SoMwcLyga3eDulXdfjiu2QHaEo?w=292&h=182&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image1">
+        <img src="https://th.bing.com/th/id/OIP.Zs7B7A0PxWAXMQSl1i-pNQHaE-?w=188&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image2">
+        <img src="https://th.bing.com/th/id/OIP.MKiMt-I0BCq5mi-qu4LUOQHaEK?w=294&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image3">
+        <img src="https://th.bing.com/th/id/OIP.oja8NvVVxnyg13J5CrYjAQHaEK?w=286&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image4">
+        <img src="https://th.bing.com/th/id/OIP.Av6DSD2LuOiUQzNxW_HdiAHaEK?w=290&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image5">
+        <img src="https://th.bing.com/th/id/OIP.SiYj6jplxr9I-Gp6nvLFoQHaEO?rs=1&pid=ImgDetMain" alt="image6">
+        <img src="https://th.bing.com/th/id/OIP.-6Wbee23-j_m4ka8gUsU_AHaEK?w=285&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image7">
+        <img src="https://th.bing.com/th/id/OIP.HRRfKZUtzcK-KS4f77zTtgHaEp?w=256&h=182&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image8">
+        <img src="https://th.bing.com/th/id/OIP.2CZWy16hCgIQ0HaRPs7wvAHaEo?w=299&h=186&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image9">
+        <img src="https://wallpapers.com/images/hd/dark-nature-rj2zws3ww99n2jzb.jpg" alt="image10">
+        <img src="https://th.bing.com/th/id/OIP.F4xMIkvXal3m1msawboiuwHaEK?w=269&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image11">
+        <img src="https://th.bing.com/th/id/OIP.heLE7s5RDYqMzcWwSAWiVQHaED?w=334&h=183&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="image12">
+    </div>
+
+    <!-- Optional: Lightbox functionality -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="enlarged" />
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const galleryImages = document.querySelectorAll(".gallery img");
+        const closeBtn = document.querySelector(".close");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) lightbox.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
