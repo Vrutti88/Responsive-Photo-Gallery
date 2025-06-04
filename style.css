@@ -5,8 +5,7 @@
 }
 
 body {
-    /* Main background: teal/blue-green gradient */
-    background: linear-gradient(120deg, #3f6966, #4d9c97, #2fc1b8);
+    background: linear-gradient(120deg, #b9f8f4, #8df5ee, #61f7ed);
     display: flex;
     justify-content: center;
     align-items: center;
